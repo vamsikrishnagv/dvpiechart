@@ -78,7 +78,10 @@ function pieChart(startDate, endDate) {
             const data = d3.select(this).datum();
             d3.select(this)
                 .style("stroke-width", "4px")
-                .style('opacity', 1);
+                .style('opacity', 1)
+                .transition()
+                .duration(200)
+                .attr('transform', `scale(1.1)`);
             tooltip
                 .style("opacity", 1)
                 .html(`Area ${data.data[0]}: ${data.data[1]} check-ins`)
@@ -88,7 +91,10 @@ function pieChart(startDate, endDate) {
         .on('mouseout', function (d) {
             d3.select(this)
                 .style("stroke-width", "2px")
-                .style('opacity', 0.7);
+                .style('opacity', 0.7)
+                .transition()
+                .duration(200)
+                .attr('transform', `scale(1)`);
             tooltip
                 .style("opacity", 0);
         });
