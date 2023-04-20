@@ -2,6 +2,7 @@ let checkinData;
 //draw a pie chart with default values
 document.addEventListener('DOMContentLoaded', function () {
     loadCheckInDataAndDrawChart();
+    //test comment
 });
 
 //loads the checkin data from the csv file
